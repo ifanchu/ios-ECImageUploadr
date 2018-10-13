@@ -185,8 +185,8 @@ extension ECImageUploadrViewController {
                upload.responseJSON { response in
                   guard response.result.isSuccess, let value = response.result.value else {
                      print("Error while uploading file: \(String(describing: response.result.error))")
-                     if let block = self.successCompletion {
-                        block(nil)
+                     if let block = self.failureCompletion {
+                        block(response.result.error?.localizedDescription ?? "")
                      }
                      return
                   }

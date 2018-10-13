@@ -49,6 +49,7 @@ class ViewController: UIViewController {
          print("Upload progress: \(progress)")
       }
       vc.failureCompletion = { error in
+         self.activityIndicatorView.stopAnimating()
          let alert = UIAlertController(
             title: "Failed",
             message: "\(error)",
@@ -58,7 +59,7 @@ class ViewController: UIViewController {
       }
       vc.cancelCompletion = {
          let alert = UIAlertController(
-            title: "Canceled",
+            title: "Cancelled",
             message: nil,
             preferredStyle: .alert)
          alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
