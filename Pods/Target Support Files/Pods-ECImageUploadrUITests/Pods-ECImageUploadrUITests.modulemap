@@ -1,0 +1,6 @@
+framework module Pods_ECImageUploadrUITests {
+  umbrella header "Pods-ECImageUploadrUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
